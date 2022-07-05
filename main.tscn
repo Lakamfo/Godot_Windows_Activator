@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://custom_theme.tres" type="Theme" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 1 )
+
+[node name="input" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="name" type="Label" parent="input"]
+margin_right = 250.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+text = "Windows Activator"
+align = 1
+valign = 1
+
+[node name="key_enter" type="LineEdit" parent="input"]
+margin_top = 34.0
+margin_right = 250.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 50 )
+align = 1
+placeholder_text = "Select a version or enter key"
+
+[node name="winver" type="OptionButton" parent="input"]
+margin_top = 88.0
+margin_right = 250.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 0, 25 )
+text = "Windows 10"
+align = 1
+items = [ "Windows 8", null, false, 1, null, "Windows 8.1", null, false, 2, null, "Windows 10", null, false, 3, null, "Windows 11", null, false, 4, null ]
+selected = 3
+
+[node name="win_mod" type="OptionButton" parent="input"]
+margin_top = 117.0
+margin_right = 250.0
+margin_bottom = 142.0
+rect_min_size = Vector2( 0, 25 )
+text = "Pro"
+align = 1
+items = [ "Pro", null, false, 0, null, "Home", null, false, 1, null ]
+selected = 0
+
+[node name="activate_button" type="Button" parent="input"]
+margin_top = 146.0
+margin_right = 250.0
+margin_bottom = 196.0
+rect_min_size = Vector2( 0, 50 )
+text = "Activate"
+
+[node name="open_key_list" type="Button" parent="input"]
+margin_top = 200.0
+margin_right = 250.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 0, 25 )
+text = "Open key list"
+
+[node name="made_with" type="Label" parent="input"]
+margin_top = 229.0
+margin_right = 250.0
+margin_bottom = 248.0
+text = "Made with Godot Engine"
+align = 1
+valign = 1
+
+[connection signal="item_selected" from="input/winver" to="." method="_on_winver_item_selected"]
+[connection signal="item_selected" from="input/win_mod" to="." method="_on_win_mod_item_selected"]
+[connection signal="pressed" from="input/activate_button" to="." method="_on_activate_button_pressed"]
+[connection signal="pressed" from="input/open_key_list" to="." method="_on_open_key_list_pressed"]
