@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://custom_theme.tres" type="Theme" id=2]
+[ext_resource path="res://boot_logo.png" type="Texture" id=3]
 
 [sub_resource type="Theme" id=1]
 
@@ -45,7 +46,8 @@ margin_top = 88.0
 margin_right = 250.0
 margin_bottom = 113.0
 rect_min_size = Vector2( 0, 25 )
-text = "Windows 10"
+mouse_default_cursor_shape = 2
+text = "Windows 11"
 align = 1
 items = [ "Windows 8", null, false, 1, null, "Windows 8.1", null, false, 2, null, "Windows 10", null, false, 3, null, "Windows 11", null, false, 4, null ]
 selected = 3
@@ -55,6 +57,7 @@ margin_top = 117.0
 margin_right = 250.0
 margin_bottom = 142.0
 rect_min_size = Vector2( 0, 25 )
+mouse_default_cursor_shape = 2
 text = "Pro"
 align = 1
 items = [ "Pro", null, false, 0, null, "Home", null, false, 1, null ]
@@ -65,6 +68,7 @@ margin_top = 146.0
 margin_right = 250.0
 margin_bottom = 196.0
 rect_min_size = Vector2( 0, 50 )
+mouse_default_cursor_shape = 2
 text = "Activate"
 
 [node name="open_key_list" type="Button" parent="input"]
@@ -72,6 +76,7 @@ margin_top = 200.0
 margin_right = 250.0
 margin_bottom = 225.0
 rect_min_size = Vector2( 0, 25 )
+mouse_default_cursor_shape = 2
 text = "Open key list"
 
 [node name="made_with" type="Label" parent="input"]
@@ -81,6 +86,15 @@ margin_bottom = 248.0
 text = "Made with Godot Engine"
 align = 1
 valign = 1
+
+[node name="logo" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Tween" type="Tween" parent="logo"]
 
 [connection signal="item_selected" from="input/winver" to="." method="_on_winver_item_selected"]
 [connection signal="item_selected" from="input/win_mod" to="." method="_on_win_mod_item_selected"]

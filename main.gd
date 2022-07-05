@@ -17,6 +17,9 @@ var windows_8_1_keys = ["M9Q9P-WNJJT-6PXPY-DWX8H-6XWKK","7B9N3-D94CG-YTVHR-QBPX3
 var windows_10_keys = ["TX9XD-98N7V-6WMQ6-BX7FG-H8Q99","3KHY7-WNT83-DGQKR-F7HPR-844BM","7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH","PVMJN-6DFY6-9CCP6-7BKTT-D3WVR","W269N-WFGWX-YVC9B-4J6C9-T83GX","MH37W-N47XK-V7XM9-C7227-GCQG9","NW6C2-QMPVW-D7KKK-3GKT6-VCFB2","NPPR9-FWDCX-D2C8J-H872K-2YT43","DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4"]
 var windows_11_keys = ["TX9XD-98N7V-6WMQ6-BX7FG-H8Q99","3KHY7-WNT83-DGQKR-F7HPR-844BM","7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH","PVMJN-6DFY6-9CCP6-7BKTT-D3WVR","W269N-WFGWX-YVC9B-4J6C9-T83GX","MH37W-N47XK-V7XM9-C7227-GCQG9","NW6C2-QMPVW-D7KKK-3GKT6-VCFB2","NPPR9-FWDCX-D2C8J-H872K-2YT43","DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4"]
 
+onready var tween = $logo/Tween
+onready var logo = $logo
+
 onready var key_enter = $input/key_enter
 onready var activate_button = $input/activate_button
 onready var winver = $input/winver
@@ -24,6 +27,8 @@ onready var win_mod = $input/win_mod
 
 func _ready() -> void:
 	update_list()
+	tween.interpolate_property(logo,"modulate:a",logo.modulate.a,0,1,Tween.TRANS_SINE,Tween.EASE_IN_OUT)
+	tween.start()
 
 func update_list():
 	win_mod.clear()

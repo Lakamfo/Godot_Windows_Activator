@@ -12,7 +12,9 @@ config_version=4
 
 config/name="Win_Activator"
 run/main_scene="res://main.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://boot_logo.png"
+config/icon="res://logo.png"
+config/windows_native_icon="res://logo.ico"
 
 [display]
 
