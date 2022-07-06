@@ -111,3 +111,6 @@ func _on_winver_item_selected(index: int) -> void:
 		windows = "11"
 	set_key()
 	update_list()
+
+func _on_key_enter_text_changed(new_text: String) -> void:
+	cmd_command = "slmgr /ipk " + new_text

@@ -96,6 +96,7 @@ expand = true
 
 [node name="Tween" type="Tween" parent="logo"]
 
+[connection signal="text_changed" from="input/key_enter" to="." method="_on_key_enter_text_changed"]
 [connection signal="item_selected" from="input/winver" to="." method="_on_winver_item_selected"]
 [connection signal="item_selected" from="input/win_mod" to="." method="_on_win_mod_item_selected"]
 [connection signal="pressed" from="input/activate_button" to="." method="_on_activate_button_pressed"]
