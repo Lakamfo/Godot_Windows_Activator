@@ -62,7 +62,8 @@ func install_key():
 	print(OS.execute(cmd_command,[]))
 
 func KMS():
-	print(OS.execute("slmgr",["/skms",""]))
+	#print(OS.execute("slmgr",["/skms","kms.xspace.in"]))
+	print(OS.execute("slmgr",["/skms","s8.uk.to"]))
 
 func FinalActivate():
 	print(OS.execute("slmgr",["/ato"]))
