@@ -35,13 +35,13 @@ func update_list():
 	if windows == "8_1":
 		for i in windows_8_1:
 			win_mod.add_item(i)
-	if windows == "8":
+	elif windows == "8":
 		for i in windows_8:
 			win_mod.add_item(i)
-	if windows == "10":
+	elif windows == "10":
 		for i in windows_10:
 			win_mod.add_item(i)
-	if windows == "11":
+	elif windows == "11":
 		for i in windows_10:
 			win_mod.add_item(i)
 
