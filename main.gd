@@ -48,11 +48,11 @@ func update_list():
 func set_key():
 	if windows == "10":
 		key_enter.text = windows_10_keys[edition_int]
-	if windows == "11":
+	elif windows == "11":
 		key_enter.text = windows_11_keys[edition_int]
-	if windows == "8_1":
+	elif windows == "8_1":
 		key_enter.text = windows_8_1_keys[edition_int]
-	if windows == "8":
+	elif windows == "8":
 		key_enter.text = windows_8_keys[edition_int]
 
 func _on_open_key_list_pressed() -> void:
@@ -62,7 +62,7 @@ func install_key():
 	print(OS.execute(cmd_command,[]))
 
 func KMS():
-	print(OS.execute("slmgr",["/skms","kms.xspace.in"]))
+	print(OS.execute("slmgr",["/skms",""]))
 
 func FinalActivate():
 	print(OS.execute("slmgr",["/ato"]))
@@ -72,11 +72,11 @@ func _on_activate_button_pressed() -> void:
 		
 		if windows == "10":
 			cmd_command = "slmgr /ipk " + windows_10_keys[edition_int]
-		if windows == "11":
+		elif windows == "11":
 			cmd_command = "slmgr /ipk " + windows_11_keys[edition_int]
-		if windows == "8_1":
+		elif windows == "8_1":
 			cmd_command = "slmgr /ipk " + windows_8_1_keys[edition_int]
-		if windows == "8":
+		elif windows == "8":
 			cmd_command = "slmgr /ipk " + windows_8_keys[edition_int]
 		
 		install_key()
@@ -90,11 +90,11 @@ func _on_activate_button_pressed() -> void:
 func _on_win_mod_item_selected(index: int) -> void:
 	if windows == "8":
 		edition = windows_8[index]
-	if windows == "8_1":
+	elif windows == "8_1":
 		edition = windows_8_1[index]
-	if windows == "10":
+	elif windows == "10":
 		edition = windows_10[index]
-	if windows == "11":
+	elif windows == "11":
 		edition = windows_11[index]
 	edition_int = index
 	set_key()
@@ -102,11 +102,11 @@ func _on_win_mod_item_selected(index: int) -> void:
 func _on_winver_item_selected(index: int) -> void:
 	if index == 0:
 		windows = "8"
-	if index == 1:
+	elif index == 1:
 		windows = "8_1"
-	if index == 2:
+	elif index == 2:
 		windows = "10"
-	if index == 3:
+	elif index == 3:
 		windows = "11"
 	set_key()
 	update_list()
